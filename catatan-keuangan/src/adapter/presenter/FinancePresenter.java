@@ -11,7 +11,7 @@ public class FinancePresenter {
     }
 
     private void printBalance(double balance) {
-        System.out.printf("Saldo saat ini: Rp %.0f%n", balance);
+        System.out.printf("Saldo: Rp %.0f%n", balance);
     }
 
     private void printList(List<Transaction> list, String header, String emptyMessage) {
@@ -36,7 +36,6 @@ public class FinancePresenter {
 
     public void showSortedTransactions(List<Transaction> list, double balance) {
         printList(list, "Daftar Transaksi (Terurut):", "- Belum ada transaksi!");
-        printBalance(balance);
     }
 
     public void showAddSuccess(Transaction t) {
