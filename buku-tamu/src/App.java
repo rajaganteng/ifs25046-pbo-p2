@@ -1,15 +1,16 @@
-import adapter.presenter.GuestPresenter;
-import adapter.repository.GuestRepository;
-import domain.repository.IGuestRepository;
-import framework.view.GuestView;
-import usecase.GuestUseCase;
+import adapter.presenter.FinancePresenter;
+import adapter.repository.TransactionRepository;
+import domain.repository.ITransactionRepository;
+import framework.view.FinanceView;
+import usecase.FinanceUseCase;
 
+/** Composition Root aplikasi catatan keuangan. */
 public class App {
     public static void main(String[] args) {
-        IGuestRepository repository = new GuestRepository();
-        GuestUseCase useCase = new GuestUseCase(repository);
-        GuestPresenter presenter = new GuestPresenter();
-        GuestView view = new GuestView(useCase, presenter);
+        ITransactionRepository repository = new TransactionRepository();
+        FinanceUseCase useCase = new FinanceUseCase(repository);
+        FinancePresenter presenter = new FinancePresenter();
+        FinanceView view = new FinanceView(useCase, presenter);
         view.show();
     }
 }
